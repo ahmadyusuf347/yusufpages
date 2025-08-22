@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mesh Wave Line Background</title>
+  <style>
+    :root{
+      --g1:#888888;  /* abu tua */
+      --g2:#ffffff;  /* putih */
+      --bg:#111111;  /* background gelap */
+    }
+
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:var(--bg);
+      overflow:hidden;
+      font-family:Arial, sans-serif;
+      color:white;
+    }
+
+    .wave-wrap{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      overflow:hidden;
+    }
+
+    .layer{
+      position:absolute;
+      width:220%;
+      height:100%;
+    }
+    .layer svg{width:100%; height:100%}
+
+    /* kecepatan berbeda untuk parallax */
+    .l1{ top:15%; animation:slide 22s linear infinite; opacity:0.55 }
+    .l2{ top:25%; animation:slide 34s linear infinite reverse; opacity:0.45 }
+    .l3{ top:35%; animation:slide 50s linear infinite; opacity:0.35 }
+
+    @keyframes slide{
+      from{ transform:translateX(0) }
+      to  { transform:translateX(-50%) }
+    }
+
+    .content{ text-align:center; z-index:1 }
+    .content h1{ font-size:3rem; margin:0 }
+    .content p{ font-size:1.2rem }
+  </style>
+</head>
+<body>
+  <div class="wave-wrap">
+    <!-- Layer 1 (banyak garis rapat) -->
+    <div class="layer l1">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--g1)" />
+            <stop offset="50%" stop-color="var(--g2)" />
+            <stop offset="100%" stop-color="var(--g1)" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#grad1)" stroke-width="1">
+          <path d="M0,120 C480,60 960,180 1440,120"/>
+          <path d="M0,130 C480,70 960,190 1440,130"/>
+          <path d="M0,140 C480,80 960,200 1440,140"/>
+          <path d="M0,150 C480,90 960,210 1440,150"/>
+          <path d="M0,160 C480,100 960,220 1440,160"/>
+          <path d="M0,170 C480,110 960,230 1440,170"/>
+          <path d="M0,180 C480,120 960,240 1440,180"/>
+          <path d="M0,190 C480,130 960,250 1440,190"/>
+          <path d="M0,200 C480,140 960,260 1440,200"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Layer 2 (lebih rapat lagi) -->
+    <div class="layer l2">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--g1)" />
+            <stop offset="50%" stop-color="var(--g2)" />
+            <stop offset="100%" stop-color="var(--g1)" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#grad2)" stroke-width="0.9">
+          <path d="M0,210 C480,150 960,270 1440,210"/>
+          <path d="M0,220 C480,160 960,280 1440,220"/>
+          <path d="M0,230 C480,170 960,290 1440,230"/>
+          <path d="M0,240 C480,180 960,300 1440,240"/>
+          <path d="M0,250 C480,190 960,310 1440,250"/>
+          <path d="M0,260 C480,200 960,320 1440,260"/>
+          <path d="M0,270 C480,210 960,330 1440,270"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Layer 3 (paling banyak garis) -->
+    <div class="layer l3">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--g1)" />
+            <stop offset="50%" stop-color="var(--g2)" />
+            <stop offset="100%" stop-color="var(--g1)" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#grad3)" stroke-width="0.8">
+          <path d="M0,280 C480,220 960,340 1440,280"/>
+          <path d="M0,290 C480,230 960,350 1440,290"/>
+          <path d="M0,300 C480,240 960,360 1440,300"/>
+          <path d="M0,310 C480,250 960,370 1440,310"/>
+          <path d="M0,320 C480,260 960,380 1440,320"/>
+          <path d="M0,330 C480,270 960,390 1440,330"/>
+          <path d="M0,340 C480,280 960,400 1440,340"/>
+          <path d="M0,350 C480,290 960,410 1440,350"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Law Made Simple</h1>
+    <p>Expertise at Scale</p>
+  </div>
+</body>
+</html>
